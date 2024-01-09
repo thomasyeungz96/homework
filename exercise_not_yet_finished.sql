@@ -203,5 +203,12 @@ left join departments d on e.DEPARTMENT_ID = d.DEPARTMENT_ID
 group by e.DEPARTMENT_ID;
 
 
+select e.EMPLOYEE_ID, j.JOB_TITLE, DATEDIFF(jh.END_DATE, jh.START_DATE) as 'Number of days'
+from employees e
+left join jobs j on e.job_id = j.job_id
+left join job_history jh on j.job_id = jh.job_id
+where jh.department_id = 30
+;
+
 
 
